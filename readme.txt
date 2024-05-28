@@ -43,4 +43,5 @@ php bin/console doctrine:fixtures:load
 
 Cela permettra d'envoyer des données fictives en base de données.
 
+Nouveau projet
 ***/
