@@ -11,8 +11,9 @@ const config: Config = {
       backgroundColor: {
         "color-primary": "#70a377",
         "color-secondary": "#fbf4e7",
-        "color-yellow": "#F2DDA4",
-        "color-break": "#06038D",
+        "color-brown": "#A58B5A",
+        "color-break": "#2F507A",
+        "color-grey": "#E6EFFA",
       },
     },
   },

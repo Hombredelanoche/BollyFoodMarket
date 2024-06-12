@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const BurgerMenu = () => {
   return (
-    <article className="flex flex-col p-5 justify-around">
+    <article className="flex flex-col p-5 justify-center gap-2">
       <div className="w-14 h-0.5 bg-black"></div>
       <div className="w-14 h-0.5 bg-black"></div>
       <div className="w-14 h-0.5 bg-black"></div>
@@ -17,10 +17,17 @@ const BurgerMenu = () => {
 const Header = () => {
   return (
     <>
-      <header className="flex m-5 shadow-sm rounded-sm bg-slate-50 items-center gap-5">
+      <header className="flex m-5 shadow-sm rounded-sm bg-slate-50 items-center content-center gap-5">
         <section className="flex gap-5">
           <BurgerMenu />
-          <Image src="/BollyFoodMarket.svg" alt="logo" width={90} height={90} />
+          <Link href="/">
+            <Image
+              src="/BollyFoodMarket.svg"
+              alt="logo"
+              width={90}
+              height={90}
+            />
+          </Link>
         </section>
         <section className="flex items-center align-middle justify-around w-full">
           <input
@@ -28,10 +35,14 @@ const Header = () => {
             className="border-2 p-2 rounded-sm w-2/3"
             placeholder="Search..."
           />
-          <Link href="#">Catalogue</Link>
+          <Link href="/catalogue">Catalogue</Link>
           <article className="flex justify-around gap-14">
-            <FontAwesomeIcon icon={faUser} />
-            <FontAwesomeIcon icon={faCartShopping} />
+            <Link href="/auth/register">
+              <FontAwesomeIcon icon={faUser} />
+            </Link>
+            <Link href="/panier">
+              <FontAwesomeIcon icon={faCartShopping} />
+            </Link>
           </article>
         </section>
       </header>

@@ -1,5 +1,9 @@
 const Register = () => {
-  return <><h1>S'inscrire :</h1></>
-}
+  return (
+    <>
+      <h1>S{"'"}inscrire :</h1>
+    </>
+  );
+};
 
-export default Register
+export default Register;
