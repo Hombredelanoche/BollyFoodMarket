@@ -19,9 +19,7 @@ const Categorie = ({ children, src, ...otherProps }) => {
           className="rounded-lg"
         />
         <div>{children}</div>
-        <Button className="rounded-lg" type="bouton" otherProps={undefined}>
-          voir
-        </Button>
+        <Button>voir</Button>
       </div>
     </>
   );

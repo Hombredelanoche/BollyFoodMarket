@@ -2,18 +2,12 @@
 
 import clsx from "clsx";
 
-const Button = ({
-  className,
-  children = "cliquez ici",
-  type = "button",
-  ...props
-}) => {
+const Button = ({ children = "cliquez ici", type = "button", ...props }) => {
   return (
     <>
       <button
         className={clsx(
-          "w-fit p-3 bg-[#043464] text-white rounded-lg font-semibold",
-          className
+          "w-fit p-3 bg-[#043464] text-white rounded-lg font-semibold "
         )}
         type="button"
         {...props}

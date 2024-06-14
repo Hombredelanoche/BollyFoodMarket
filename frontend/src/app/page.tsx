@@ -43,8 +43,8 @@ const Accueil = () => {
       </section>
 
       <CTA>
-        Notre but vous apportez l{"'"}essentiels de la cuisine indienne afin que
-        l{"'"}Inde soi chez vous !
+        Notre but est de vous apportez l{"'"}essentiels de la cuisine indienne
+        afin que l{"'"}Inde soi chez vous !
       </CTA>
     </>
   );

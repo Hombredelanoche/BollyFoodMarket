@@ -13,31 +13,29 @@ const Footer = () => {
     <>
       <footer className="flex flex-col">
         <section className="flex bg-white w-full items-center p-10">
-          <div className="w-1/3 flex flex-col p-5 items-center gap-2">
+          <div className="w-1/3 flex flex-col p-5 items-center gap-3">
             <FontAwesomeIcon icon={faTruck} />
             <h5>
               Livraison offerte à partir de{" "}
               <span className="font-bold">40 euros d{"'"}achat</span>
             </h5>
             <Link href="#">
-              <Button className={undefined} otherProps={undefined}>
-                Voir le catalogue
-              </Button>
+              <Button>Voir le catalogue</Button>
             </Link>
           </div>
-          <div className="w-1/3 flex flex-col p-5 items-center gap-2">
+          <div className="w-1/3 flex flex-col p-5 items-center gap-3">
             <FontAwesomeIcon icon={faBook} />
 
             <p className="font-bold">Découvrez notre équipe !</p>
             <Link href="#">
-              <Button className={undefined} otherProps={undefined}></Button>
+              <Button></Button>
             </Link>
           </div>
-          <div className="w-1/3 flex flex-col p-5 items-center gap-2">
+          <div className="w-1/3 flex flex-col p-5 items-center gap-3">
             <FontAwesomeIcon icon={faList} />
             <p className="font-bold">Voir les retours client</p>
             <Link href="#">
-              <Button className={undefined} otherProps={undefined}></Button>
+              <Button></Button>
             </Link>
           </div>
         </section>
@@ -53,7 +51,7 @@ const Footer = () => {
             <SocialMedia />
           </article>
 
-          <article className="flex flex-col justify-between w-1/4 items-center bg">
+          <article className="flex flex-col justify-between w-1/4">
             <ContactUs />
           </article>
         </section>
