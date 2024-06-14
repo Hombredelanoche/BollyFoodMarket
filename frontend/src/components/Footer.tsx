@@ -1,6 +1,8 @@
+"use client";
+
 import Button from "@/components/ui/Button";
 import ContactUs from "@/components/ui/ContactUs";
-import FormField from "@/components/ui/FormField";
+import SocialMedia from "@/components/ui/SocialMedia";
 import { faBook, faList, faTruck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -10,7 +12,7 @@ const Footer = () => {
   return (
     <>
       <footer className="flex flex-col">
-        <section className="flex bg-white w-full items-center">
+        <section className="flex bg-white w-full items-center p-10">
           <div className="w-1/3 flex flex-col p-5 items-center gap-2">
             <FontAwesomeIcon icon={faTruck} />
             <h5>
@@ -40,7 +42,7 @@ const Footer = () => {
           </div>
         </section>
         <section className="flex justify-between  bg-[#E8C798] p-10 items-center">
-          <article className="flex flex-col justify-between w-1/4 items-center">
+          <article className="flex flex-col justify-between w-1/4 items-center ">
             <Image
               src="/BollyFoodMarket.svg"
               width={200}
@@ -48,15 +50,10 @@ const Footer = () => {
               alt="footerLogo"
             ></Image>
 
-            <ul className="flex gap-10">
-              <li>Facebook</li>
-              <li>Instagram</li>
-              <li>TikTok</li>
-              <li>Snapchat</li>
-            </ul>
+            <SocialMedia />
           </article>
 
-          <article className="flex flex-col justify-between w-1/4 items-center">
+          <article className="flex flex-col justify-between w-1/4 items-center bg">
             <ContactUs />
           </article>
         </section>

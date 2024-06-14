@@ -1,40 +1,56 @@
 "use client";
-import Error from "next/error";
-import { useEffect, useState } from "react";
+
+import React, { useEffect, useState } from "react";
 
 const Catalogue = () => {
-  const [produit, setProduit] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const getData = async () => {
+    const fetchProducts = async () => {
       try {
-        const query = await fetch(
-          "https://127.0.0.1:8000/api/produits?page=1",
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
+        const response = await fetch(
+          "https://localhost:8000/api/produits?page=1"
         );
-        if (!query.ok) {
-          throw new Error(`Http error ! Status: ${query.statut}`);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
         }
-        const response = await query.json();
-        console.log(response);
-        if (Array.isArray(response["hydra:member"])) {
-          setProduit(response["hydra:member"]);
-        } else {
-          setError("Unexpected response struture");
-        }
+        const data = await response.json();
+        setProducts(data["hydra:member"]);
       } catch (error) {
         setError(error.message);
+      } finally {
+        setLoading(false);
       }
     };
-    getData();
+
+    fetchProducts();
   }, []);
 
-  return <>catalogue</>;
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    <div>Un problème est survenu.</div>;
+    console.log(error);
+  }
+
+  return (
+    <>
+      <h1>Catalogue</h1>
+      <ul>
+        {products.map((product) => (
+          <li key={product.id} className="mb-4">
+            <h2 className="font-bold text-xl">{product.nom_de_produit}</h2>
+            <p>{product.description}</p>
+            <p className="font-bold">{product.prix_ttc} €</p>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 };
 
 export default Catalogue;
