@@ -45,8 +45,8 @@ const Catalogue = () => {
                 <Image
                   src="/food-2.jpg"
                   alt="produit"
-                  width={300}
-                  height={500}
+                  width={280}
+                  height={320}
                 />
               </div>
               <h3 className="mt-4 text-sm text-gray-700">

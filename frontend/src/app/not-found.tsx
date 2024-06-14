@@ -1,12 +1,11 @@
+import Image from "next/image";
+
 const NotFound = () => {
   return (
-    <section className="w-full">
-      
-        <div className="flex-col justify-center gap-5 bg-slate-400">
-          <h2 className="font-semibold">Page not found</h2>
-          <p>Could not find requested ressource</p>
-        </div>
-     
+    <section className="w-full-screen mb-10">
+      <div className="flex flex-col items-center mx-auto my-auto gap-10">
+        <Image src="/404.jpg" alt="404error" width={700} height={700} />
+      </div>
     </section>
   );
 };
