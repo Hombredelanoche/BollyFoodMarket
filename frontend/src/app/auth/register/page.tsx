@@ -9,7 +9,7 @@ const Register = () => {
       <section className="flex justify-center mb-28 mt-16">
         <article>
           <Image
-            src="/food-1.jpg"
+            src="/food-3.jpg"
             alt="photoInscription"
             width={800}
             height={850}
@@ -36,7 +36,7 @@ const Register = () => {
               Connectez-vous !
             </Link>
           </span>
-          <Button type="submit" className="w-80">
+          <Button type="submit" className="w-60">
             Valider
           </Button>
         </form>

@@ -1,22 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-
-const fetchProducts = async () => {
-  const response = await axios.get(
-    "https://localhost:8000/api/produits?page=1"
-  );
-  return response.data;
-};
+import { useEffect, useState } from "react";
 
 const Catalogue = () => {
-  const { data, error, isLoading } = useQuery(["Produit"], fetchProducts);
+  const [products, setProducts] = useState([]);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {(error as Error).message} </div>;
+  useEffect(() => {
+    async function fetchProduits() {
+      try {
+        const response = await axios.get(
+          "https://localhost:8000/api/produits?page=1"
+        );
+        setProducts(response.data["hydra:member"]);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des données :", error);
+      }
+    }
+
+    fetchProduits();
+  }, []);
 
   return (
     <div className="bg-white">
@@ -24,7 +28,7 @@ const Catalogue = () => {
         <h2 className="sr-only">Products</h2>
 
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {data.map((data) => (
+          {products.map((product) => (
             <a key={product.id} href={product.href} className="group">
               <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                 <Image
