@@ -28,6 +28,7 @@
   "devDependencies": {
     "@api-platform/admin": "^3.4.7",
     "@babel/preset-react": "^7.24.7",
+    "@tanstack/eslint-plugin-query": "^5.43.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
