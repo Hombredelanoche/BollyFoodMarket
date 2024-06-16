@@ -6,7 +6,7 @@ import * as yup from "yup";
 
 export const emailValidator = yup
   .string()
-  .required("Une adresse mail valide doit être communiquée.")
+  .required("Ce Champs ne peut être vide.")
   .email("Le format de l'adresse mail est invalide.")
   .min(5, "L'adresse mail doit faire plus de 5 caractères.")
   .max(180, "L'adresse mail ne doit pas dépasser les 180 caractères.")
@@ -16,7 +16,7 @@ export const emailValidator = yup
   );
 export const passwordValidator = yup
   .string()
-  .required("Le mot de passe ne doit pas être vide.")
+  .required("Ce Champs ne peut être vide.")
   .min(8, "Le mot de passe doit contenir au moins 8 caractères.")
   .max(255, "Le mot de passe ne peut pas contenir plus de 255 caractères.")
   .matches(
@@ -24,9 +24,17 @@ export const passwordValidator = yup
     "Le mot de passe doit contenir au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial."
   );
 
+export const cpasswordValidator = yup
+  .string()
+  .oneOf(
+    [yup.ref("password"), null],
+    "Les mots de passes doivent être les mêmes."
+  )
+  .required("Ce Champs ne peut être vide.");
+
 export const nomDeFamilleValidator = yup
   .string()
-  .required("Le nom de famille ne doit pas être vide.")
+  .required("Ce Champs ne peut être vide.")
   .max(40, "Le nom de famille ne doit pas dépasser 40 caractères.")
   .matches(
     /^[a-zA-ZÀ-ÿ' -]+$/,
@@ -35,7 +43,7 @@ export const nomDeFamilleValidator = yup
 
 export const prenomValidator = yup
   .string()
-  .required("Le prénom ne doit pas être vide.")
+  .required("Ce Champs ne peut être vide.")
   .max(40, "Le prénom ne doit pas dépasser 40 caractères.")
   .matches(
     /^[a-zA-ZÀ-ÿ' -]+$/,
@@ -44,11 +52,8 @@ export const prenomValidator = yup
 
 export const genreValidator = yup
   .string()
-  .required("Le genre ne doit pas être vide.")
-  .oneOf(
-    ["Masculin", "Féminin", "Autre"],
-    "Le genre doit être l'un des choix suivants : Masculin, Féminin, Autre."
-  );
+  .required("Ce Champs ne peut être vide.")
+  .oneOf(["Masculin", "Feminin", "Autres"], "Un genre doit-être choisis");
 export const numeroTelephoneValidator = yup
   .string()
   .required("Le numéro de téléphone ne doit pas être vide.")
@@ -58,14 +63,16 @@ export const numeroTelephoneValidator = yup
     "Le numéro de téléphone doit contenir uniquement des chiffres, des espaces et des tirets, et peut commencer par un '+'."
   );
 
-export const actifValidator = yup.boolean().default(true);
+export const roleValidator = yup.array().default(["ROLE_USER"]).required();
 
-export const dateDeCreationValidator = yup
-  .date()
-  .required("La date de création est obligatoire.")
-  .typeError("La date de création doit être une date valide.");
+// export const actifValidator = yup.boolean().default(true);
 
-export const dateDeModificationValidator = yup
-  .date()
-  .nullable()
-  .typeError("La date de modification doit être une date valide.");
+// export const dateDeCreationValidator = yup
+//   .date()
+//   .required("Ce Champs ne peut être vide.")
+//   .typeError("La date de création doit être une date valide.");
+
+// export const dateDeModificationValidator = yup
+//   .date()
+//   .nullable()
+//   .typeError("La date de modification doit être une date valide.");

@@ -4,9 +4,8 @@ import clsx from "clsx";
 
 const Button = ({
   children = "cliquez ici",
-  type = "button",
   className = null,
-  ...props
+  ...otherProps
 }) => {
   return (
     <>
@@ -15,8 +14,7 @@ const Button = ({
           "w-fit p-3 bg-[#043464] text-white rounded-lg font-semibold ",
           className
         )}
-        type="button"
-        {...props}
+        {...otherProps}
       >
         {children}
       </button>

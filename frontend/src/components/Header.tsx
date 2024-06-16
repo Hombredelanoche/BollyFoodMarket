@@ -40,7 +40,7 @@ const Header = () => {
           />
           <Link href="/catalogue">Catalogue</Link>
           <article className="flex justify-around gap-14">
-            <Link href="/auth/register">
+            <Link href="/auth/login">
               <FontAwesomeIcon icon={faUser} />
             </Link>
             <Link href="/panier">
