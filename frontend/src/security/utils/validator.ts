@@ -76,3 +76,20 @@ export const roleValidator = yup.array().default(["ROLE_USER"]).required();
 //   .date()
 //   .nullable()
 //   .typeError("La date de modification doit être une date valide.");
+
+/**
+ * Page de connexion validator
+ */
+
+export const emailValidatorLogin = yup
+  .string()
+  .required("Ce Champs ne peut être vide.")
+  .email("Le format de l'adresse mail est invalide.")
+  .typeError("Une erreur est survenue lors de la vérification de votre mail");
+
+export const passwordValidatorLogin = yup
+  .string()
+  .required("Ce Champs ne peut être vide.")
+  .typeError(
+    "Une erreur est survenue lors de la vérification de votre mot de passe"
+  );

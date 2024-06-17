@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import Form from "@/components/ui/Form";
 import FormField from "@/components/ui/FormField";
 import SubmitButton from "@/components/ui/SubmitButton";
@@ -8,7 +9,11 @@ import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import { object } from "yup";
-import { emailValidator, passwordValidator } from "@/security/utils/validator";
+import {
+  emailValidatorLogin,
+  passwordValidatorLogin,
+} from "@/security/utils/validator";
+import { useEffect, useState } from "react";
 
 const initialValues = {
   email: "",
@@ -16,11 +21,18 @@ const initialValues = {
 };
 
 const validationSchema = object({
-  email: emailValidator.label("Email"),
-  password: passwordValidator.label("Mot de passe"),
+  email: emailValidatorLogin.label("Email"),
+  password: passwordValidatorLogin.label("Mot de passe"),
 });
 
 const Login = () => {
+  const router = useRouter();
+  const [isValidated, setIsValidated] = useState(false);
+
+  useEffect(() => {
+    setIsValidated(true);
+  }, []);
+
   const handleSubmit = async (values: FormikValues, { setSubmitting }) => {
     try {
       const response = await axios.post(
@@ -32,7 +44,11 @@ const Login = () => {
           },
         }
       );
-      console.log(response.data);
+      const token = response.data.token;
+      localStorage.setItem("jwtToken", token);
+      if (isValidated) {
+        router.push("/");
+      }
     } catch (error) {
       console.error("Erreur lors de l'enregistrement", error);
     } finally {
@@ -74,6 +90,14 @@ const Login = () => {
                   Inscrivez-vous !
                 </Link>
               </span>
+              <span className="text-xs">
+                Vous avez oublié votre mot de passe ?
+                <Link href="/auth/forgot-password" className="font-semibold">
+                  {" "}
+                  Cliquez-ici
+                </Link>
+              </span>
+
               <SubmitButton className="w-60 font-semibold" disabled={undefined}>
                 {isSubmitting ? "En cours..." : "Valider"}
               </SubmitButton>

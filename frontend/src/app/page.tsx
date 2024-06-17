@@ -1,6 +1,5 @@
 "use client";
 
-import Button from "@/components/ui/Button";
 import Categorie from "@/components/ui/Categorie";
 import CTA from "@/components/ui/CTA";
 import Image from "next/image";
