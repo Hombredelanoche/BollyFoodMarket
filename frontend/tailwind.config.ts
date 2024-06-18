@@ -9,11 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       backgroundColor: {
-        "color-primary": "#70a377",
-        "color-secondary": "#fbf4e7",
-        "color-brown": "#A58B5A",
-        "color-break": "#2F507A",
-        "color-grey": "#E6EFFA",
+        primaryColor: "#70a377",
+        primaryLight: "#C4CCC1",
+        SecondaryColor: "#fbf4e7",
+        brownColor: "#A58B5A",
+        blueColor: "#2F507A",
+        greyColor: "#E6EFFA",
       },
     },
   },

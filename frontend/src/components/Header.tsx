@@ -14,18 +14,20 @@ const Header = () => {
             <Image
               src="/BollyFoodMarket.svg"
               alt="logo"
-              width={90}
-              height={90}
+              width={125}
+              height={125}
             />
           </Link>
         </section>
         <section className="flex items-center align-middle justify-around w-full">
           <input
             type="text"
-            className="border-2 p-2 rounded-sm w-2/3"
+            className="border-2 p-2 rounded-sm w-1/3"
             placeholder="Search..."
           />
-          <Link href="/catalogue">Catalogue</Link>
+          <Link href="/catalogue">Notre catalogue</Link>
+          <Link href="#">Notre histoire</Link>
+          <Link href="#">Nous contacter</Link>
           <UserMenu />
         </section>
       </header>

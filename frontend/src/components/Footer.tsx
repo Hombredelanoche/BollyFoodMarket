@@ -11,8 +11,8 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <footer className="flex flex-col">
-        <section className="flex bg-white w-full items-center p-10">
+      <footer className="flex flex-col bg-white">
+        <section className="flex  w-full items-center p-10">
           <div className="w-1/3 flex flex-col p-5 items-center gap-3">
             <FontAwesomeIcon icon={faTruck} />
             <h5>
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </section>
         <section className="flex justify-between  bg-[#E8C798] p-10 items-center">
-          <article className="flex flex-col justify-between w-1/4 items-center ">
+          <article className="flex flex-col justify-between items-center ">
             <Image
               src="/BollyFoodMarket.svg"
               width={200}
@@ -51,7 +51,7 @@ const Footer = () => {
             <SocialMedia />
           </article>
 
-          <article className="flex flex-col justify-between w-1/4">
+          <article className="flex flex-col justify-between">
             <ContactUs />
           </article>
         </section>

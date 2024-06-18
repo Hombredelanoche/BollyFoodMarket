@@ -8,7 +8,7 @@ const ContactUs = () => {
       <section className="border-">
         <form
           method="post"
-          className="flex flex-col justify-between gap-5 items-end p-5"
+          className="flex flex-col justify-between gap-5 items-end"
         >
           <h2 className="underline text-xl font-semibold">
             Abonnez vous à notre NewsLetter !

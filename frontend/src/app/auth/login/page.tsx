@@ -9,10 +9,7 @@ import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
 import { object } from "yup";
-import {
-  emailValidatorLogin,
-  passwordValidatorLogin,
-} from "@/security/utils/validator";
+import { emailValidatorLogin, passwordValidatorLogin } from "@/utils/validator";
 import { useEffect, useState } from "react";
 
 const initialValues = {

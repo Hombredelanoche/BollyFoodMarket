@@ -18,7 +18,7 @@ const Categorie = ({ children, src, ...otherProps }) => {
           width={200}
           height={200}
           alt="catgerories"
-          className="rounded-lg"
+          className="rounded-sm"
         />
         <div>{children}</div>
         <Button>voir</Button>

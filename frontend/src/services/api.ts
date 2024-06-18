@@ -1,4 +1,4 @@
-import { Product } from "@/security/types/Product";
+import { Product } from "@/types/Product";
 import axios from "axios";
 
 const BASE_URL_GET_PRODUITS = "https://localhost:8000/api/produits?page=1";

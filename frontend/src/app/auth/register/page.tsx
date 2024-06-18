@@ -10,7 +10,7 @@ import {
   passwordValidator,
   prenomValidator,
   roleValidator,
-} from "@/security/utils/validator";
+} from "@/utils/validator";
 import Image from "next/image";
 import Link from "next/link";
 import { object } from "yup";
