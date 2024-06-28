@@ -1,7 +1,10 @@
 "use client";
 
+import withAuth from "@/components/hoc/withAuth";
 import { HydraAdmin } from "@api-platform/admin";
 
-const Admin = () => <HydraAdmin entrypoint="https://127.0.0.1:8000/api" />;
+const AdminDashboard = () => (
+  <HydraAdmin entrypoint="https://127.0.0.1:8000/api" />
+);
 
-export default Admin;
+export default withAuth(AdminDashboard, "ROLE_ADMIN");

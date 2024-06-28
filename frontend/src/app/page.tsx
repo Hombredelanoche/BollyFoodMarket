@@ -1,43 +1,26 @@
 "use client";
 
-import Categorie from "@/components/ui/Categorie";
+import CategorieELements from "@/components/ui/CategorieELements";
 import CTA from "@/components/ui/CTA";
 import Image from "next/image";
 
 const Accueil = () => {
   return (
     <>
-      <section className="flex justify-between items-center mx-auto p-14 rounded-sm w-3/4 gap-20">
-        <article className="flex flex-col items-center shadow-lg">
-          <div className="flex flex-col">
+      <section className="flex justify-between items-center p-14 gap-20">
+        <article className="flex flex-col items-center">
+          <div className="flex flex-col w-96">
             <Image
               src="/food-1.jpg"
-              width={800}
-              height={800}
+              width={500}
+              height={500}
               alt="logo"
-              className="rounded-sm"
+              className="rounded-lg"
             />
           </div>
         </article>
         <article className="flex flex-col justify-around items-start gap-20">
-          <Categorie src="/food-2.jpg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            eos inventore repudiandae voluptatem! Quibusdam perferendis ipsam
-            qui quasi, rem velit distinctio odio asperiores ipsa totam ratione
-            repellat laborum saepe est.
-          </Categorie>
-          <Categorie src="/food-2.jpg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            eos inventore repudiandae voluptatem! Quibusdam perferendis ipsam
-            qui quasi, rem velit distinctio odio asperiores ipsa totam ratione
-            repellat laborum saepe est.
-          </Categorie>
-          <Categorie src="/food-2.jpg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            eos inventore repudiandae voluptatem! Quibusdam perferendis ipsam
-            qui quasi, rem velit distinctio odio asperiores ipsa totam ratione
-            repellat laborum saepe est.
-          </Categorie>
+          <CategorieELements />
         </article>
       </section>
 

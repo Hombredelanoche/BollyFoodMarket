@@ -10,7 +10,7 @@ interface CTAProps extends React.HTMLAttributes<HTMLElement> {
 const CTA: React.FC<CTAProps> = ({ children, ...otherProps }) => {
   return (
     <>
-      <section className="flex flex-col gap-5 p-10 items-center justify-center w-3/4 h border-t-2 border-b-2 border-[#A58B5A] mt-16 mx-auto">
+      <section className="flex flex-col gap-5 p-3 items-center justify-center w-3/4 h border-t-2 border-b-2 border-[#A58B5A] mt-16 mx-auto">
         <article className="text-xl font-semibold underline italic">
           {children}
         </article>

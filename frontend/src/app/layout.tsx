@@ -18,13 +18,13 @@ export default function RootLayout({
     <html lang="en">
       <Provider>
         <body className={"bg-[#fbf4e7]"}>
-          <div className="flex flex-col min-h-screen">
+          <main className="flex flex-col min-h-screen">
             <Header />
             <section className="m-5">
               <div className="mx-auto">{children}</div>
             </section>
             <Footer />
-          </div>
+          </main>
         </body>
       </Provider>
     </html>

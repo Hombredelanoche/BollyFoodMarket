@@ -19,8 +19,7 @@ import axios from "axios";
 import Form from "@/components/ui/Form";
 import FormSelectField from "@/components/ui/FormSelectField";
 import SubmitButton from "@/components/ui/SubmitButton";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const initialValues = {
   nom_de_famille: "",
@@ -51,6 +50,7 @@ const options = [
 ];
 
 const Register = () => {
+  const route = useRouter();
   const handleSubmit = async (values: FormikValues, { setSubmitting }) => {
     try {
       const response = await axios.post(
@@ -62,7 +62,7 @@ const Register = () => {
           },
         }
       );
-      console.log(response.data);
+      route.push("/");
     } catch (error) {
       console.error("Erreur lors de l'enregistrement", error);
     } finally {
@@ -73,23 +73,13 @@ const Register = () => {
   return (
     <>
       <section className="flex justify-center mb-28 mt-16">
-        <article>
-          <Image
-            src="/food-3.jpg"
-            alt="photoInscription"
-            width={650}
-            height={650}
-            className="rounded-l-3xl"
-          />
-        </article>
-
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
-            <Form className="flex flex-col justify-center items-center w-full max-w-3xl bg-white shadow-sm p-10 gap-10 rounded-r-3xl">
+            <Form className="flex flex-col justify-center items-center w-full max-w-3xl bg-white shadow-sm p-10 gap-10 rounded-r-lg">
               <h2 className="text-2xl font-semibold mb-4 text-black">
                 S{"'"}inscrire
               </h2>

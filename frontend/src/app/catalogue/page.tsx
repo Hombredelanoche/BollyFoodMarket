@@ -3,6 +3,9 @@
 import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Button from "@/components/ui/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const Catalogue = () => {
   const [products, setProducts] = useState([]);
@@ -42,10 +45,12 @@ const Catalogue = () => {
                 {product.nom_du_produit}
               </h3>
               <p className="mt-1 text-sm font-medium">{product.description}</p>
-
-              <p className="mt-1 text-lg font-medium text-gray-900">
-                {product.prix_ttc}
-              </p>
+              <article className="flex justify-between w-full">
+                <p className="mt-1 text-lg font-medium text-gray-900">
+                  {product.prix_ttc + " €"}
+                </p>
+                <FontAwesomeIcon icon={faPlus} className="cursor-pointer" />
+              </article>
             </a>
           ))}
         </div>

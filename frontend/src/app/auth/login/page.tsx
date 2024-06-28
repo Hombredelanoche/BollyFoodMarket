@@ -7,7 +7,6 @@ import SubmitButton from "@/components/ui/SubmitButton";
 import { Formik, FormikValues } from "formik";
 import axios from "axios";
 import Link from "next/link";
-import Image from "next/image";
 import { object } from "yup";
 import { emailValidatorLogin, passwordValidatorLogin } from "@/utils/validator";
 import { useEffect, useState } from "react";
@@ -25,6 +24,7 @@ const validationSchema = object({
 const Login = () => {
   const router = useRouter();
   const [isValidated, setIsValidated] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     setIsValidated(true);
@@ -48,6 +48,7 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Erreur lors de l'enregistrement", error);
+      setErrorMessage("Erreur lors de la connexion. Veuillez réessayer.");
     } finally {
       setSubmitting(false);
     }
@@ -56,16 +57,6 @@ const Login = () => {
   return (
     <>
       <section className="flex justify-center mb-28 mt-16">
-        <article>
-          <Image
-            src="/food-4.jpg"
-            alt="photoInscription"
-            width={650}
-            height={650}
-            className="rounded-l-3xl"
-          />
-        </article>
-
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -76,6 +67,10 @@ const Login = () => {
               <h2 className="text-2xl font-semibold mb-4 text-black">
                 Connectez-vous
               </h2>
+              {errorMessage && (
+                <div className="text-red-500 mb-4">{errorMessage}</div>
+              )}
+
               <section className="flex flex-col items-center gap-5">
                 <FormField name="email" label="Email" type="email" />
                 <FormField name="password" label="Password" type="password" />

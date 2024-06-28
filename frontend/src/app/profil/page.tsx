@@ -10,4 +10,4 @@ const Profil = () => {
   );
 };
 
-export default withAuth(Profil);
+export default withAuth(Profil, "ROLE_USER" || "ROLE_ADMIN");

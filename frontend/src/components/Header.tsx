@@ -19,7 +19,7 @@ const Header = () => {
             />
           </Link>
         </section>
-        <section className="flex items-center align-middle justify-around w-full">
+        <nav className="flex items-center align-middle justify-around w-full">
           <input
             type="text"
             className="border-2 p-2 rounded-sm w-1/3"
@@ -29,7 +29,7 @@ const Header = () => {
           <Link href="#">Notre histoire</Link>
           <Link href="#">Nous contacter</Link>
           <UserMenu />
-        </section>
+        </nav>
       </header>
     </>
   );
