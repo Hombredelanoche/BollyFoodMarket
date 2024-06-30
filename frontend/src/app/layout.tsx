@@ -21,7 +21,7 @@ export default function RootLayout({
           <main className="flex flex-col min-h-screen">
             <Header />
             <section className="m-5">
-              <div className="mx-auto">{children}</div>
+              <div>{children}</div>
             </section>
             <Footer />
           </main>

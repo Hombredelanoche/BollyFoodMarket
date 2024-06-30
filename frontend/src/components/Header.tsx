@@ -22,12 +22,10 @@ const Header = () => {
         <nav className="flex items-center align-middle justify-around w-full">
           <input
             type="text"
-            className="border-2 p-2 rounded-sm w-1/3"
+            className="border-2 p-2 rounded-sm w-2/4"
             placeholder="Search..."
           />
-          <Link href="/catalogue">Notre catalogue</Link>
-          <Link href="#">Notre histoire</Link>
-          <Link href="#">Nous contacter</Link>
+          <Link href="/productList">Notre catalogue</Link>
           <UserMenu />
         </nav>
       </header>
