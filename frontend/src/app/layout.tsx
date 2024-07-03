@@ -18,13 +18,13 @@ export default function RootLayout({
     <html lang="en">
       <Provider>
         <body className={"bg-[#fbf4e7]"}>
-          <main className="flex flex-col min-h-screen">
+          <section className="flex flex-col min-h-screen">
             <Header />
-            <section className="m-5">
-              <div>{children}</div>
-            </section>
+            <main className="m-5">
+              <section>{children}</section>
+            </main>
             <Footer />
-          </main>
+          </section>
         </body>
       </Provider>
     </html>

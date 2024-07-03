@@ -1,4 +1,4 @@
-const unauthorized = () => {
+const Unauthorized = () => {
   return (
     <div className="mx-auto">
       Vous n{"'"}avez pas les droit requis pour accèdes à cette page
@@ -7,4 +7,4 @@ const unauthorized = () => {
   );
 };
 
-export default unauthorized;
+export default Unauthorized;

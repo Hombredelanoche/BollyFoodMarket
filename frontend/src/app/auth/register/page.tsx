@@ -11,7 +11,6 @@ import {
   prenomValidator,
   roleValidator,
 } from "@/utils/validator";
-import Image from "next/image";
 import Link from "next/link";
 import { object } from "yup";
 import { Formik, FormikValues } from "formik";

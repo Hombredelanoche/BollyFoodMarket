@@ -4,6 +4,7 @@ import {
   faUser,
   faCartShopping,
   faDoorOpen,
+  faInfo,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -26,12 +27,21 @@ const UserMenu = () => {
   return (
     <article className="flex justify-around gap-14">
       {token ? (
-        <button
-          onClick={handleLogout}
-          className="flex items-center gap-2 cursor-pointer"
-        >
-          <FontAwesomeIcon icon={faDoorOpen} />
-        </button>
+        <>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faDoorOpen} />
+          </button>
+
+          <Link
+            href="/profil"
+            className="flex items-center gap-2 cursor-pointer"
+          >
+            <FontAwesomeIcon icon={faInfo} />
+          </Link>
+        </>
       ) : (
         <Link
           href="/auth/login"

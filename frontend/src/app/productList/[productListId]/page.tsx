@@ -1,5 +1,6 @@
 "use client";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const ProductDetails = () => {
@@ -9,7 +10,7 @@ const ProductDetails = () => {
     async function fetchProduitId() {
       try {
         const response = await axios.get(
-          `https://localhost:8000/api/produits}`
+          `https://localhost:8000/api/produits/id`
         );
         setProduct(response.data["hydra:membre"]);
       } catch (error) {
